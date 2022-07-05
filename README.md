@@ -5,7 +5,7 @@ Demonstrate fNIRS processing with NIRSport2 device at the Australasian Brain & P
 
 We will take a measurement and go from raw data to average waveforms and topographic GLM results.
 
-<img width="222" alt="image" src="https://user-images.githubusercontent.com/748691/177321932-56e5104e-e08e-4dc3-bc2c-90010fa08a85.png"> <img width="222" alt="image" src="https://user-images.githubusercontent.com/748691/177322014-e988c1c9-d8e3-4e5a-be8e-bd0023178872.png"> <img width="222" alt="image" src="https://user-images.githubusercontent.com/748691/177322079-baa98760-6813-467f-b700-880a1ac15574.png">
+<img width="222" alt="image" src="https://user-images.githubusercontent.com/748691/177321932-56e5104e-e08e-4dc3-bc2c-90010fa08a85.png"> ➡ <img width="222" alt="image" src="https://user-images.githubusercontent.com/748691/177322014-e988c1c9-d8e3-4e5a-be8e-bd0023178872.png"> ➡ <img width="222" alt="image" src="https://user-images.githubusercontent.com/748691/177322079-baa98760-6813-467f-b700-880a1ac15574.png">
 
 
 ## Usage
