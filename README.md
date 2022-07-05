@@ -1,5 +1,5 @@
 # 2022 ABPS fNIRS Demo
-Demonstrate fNIRS processing with NIRSport2 device at the Australasian Brain & Psychological Sciences Meeting 2022.
+fNIRS processing with NIRSport2 device at the Australasian Brain & Psychological Sciences Meeting 2022.
 
 ## Aim
 
