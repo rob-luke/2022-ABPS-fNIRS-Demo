@@ -132,3 +132,4 @@ dmypy.json
 # Custom
 .python-version
 .idea
+***.DS_Store
