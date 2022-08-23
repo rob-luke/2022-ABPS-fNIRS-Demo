@@ -717,8 +717,8 @@ scipy = ">=1.1.0"
 tqdm = "*"
 
 [package.extras]
-hdf5 = ["h5io", "pymatreader"]
-test = ["pytest (!=4.6.0)", "pytest-cov", "pytest-timeout", "pytest-harvest", "flake8", "flake8-array-spacing", "numpydoc", "codespell", "pydocstyle", "check-manifest", "twine", "wheel", "pooch", "nitime", "nbclient", "sphinx-gallery", "eeglabio", "edflib-python", "imageio-ffmpeg"]
+test = ["imageio-ffmpeg", "edflib-python", "eeglabio", "sphinx-gallery", "nbclient", "nitime", "pooch", "wheel", "twine", "check-manifest", "pydocstyle", "codespell", "numpydoc", "flake8-array-spacing", "flake8", "pytest-harvest", "pytest-timeout", "pytest-cov", "pytest (!=4.6.0)"]
+hdf5 = ["pymatreader", "h5io"]
 
 [[package]]
 name = "mne-nirs"
@@ -736,8 +736,8 @@ numpy = ">=1.11.3"
 scipy = ">=0.17.1"
 
 [package.extras]
-docs = ["sphinx", "sphinx-gallery", "sphinx-rtd-theme", "numpydoc", "matplotlib"]
-tests = ["pytest", "pytest-cov"]
+tests = ["pytest-cov", "pytest"]
+docs = ["matplotlib", "numpydoc", "sphinx-rtd-theme", "sphinx-gallery", "sphinx"]
 
 [[package]]
 name = "mne-qt-browser"
@@ -791,9 +791,9 @@ tornado = ">=6.1"
 traitlets = ">=4.2.1"
 
 [package.extras]
-docs = ["sphinx", "nbsphinx", "sphinxcontrib-github-alt", "sphinx-rtd-theme", "myst-parser"]
+test = ["requests-unixsocket", "pytest-tornasync", "pytest-cov", "selenium (==4.1.5)", "nbval", "testpath", "requests", "coverage", "pytest"]
 json-logging = ["json-logging"]
-test = ["pytest", "coverage", "requests", "testpath", "nbval", "selenium (==4.1.5)", "pytest-cov", "pytest-tornasync", "requests-unixsocket"]
+docs = ["myst-parser", "sphinx-rtd-theme", "sphinxcontrib-github-alt", "nbsphinx", "sphinx"]
 
 [[package]]
 name = "nbclient"
@@ -815,7 +815,7 @@ test = ["black", "check-manifest", "flake8", "ipykernel", "ipython (<8.0.0)", "i
 
 [[package]]
 name = "nbconvert"
-version = "6.5.0"
+version = "6.5.1"
 description = "Converting Jupyter Notebooks"
 category = "main"
 optional = false
@@ -829,6 +829,7 @@ entrypoints = ">=0.2.2"
 jinja2 = ">=3.0"
 jupyter-core = ">=4.7"
 jupyterlab-pygments = "*"
+lxml = "*"
 MarkupSafe = ">=2.0"
 mistune = ">=0.8.1,<2"
 nbclient = ">=0.5.0"
@@ -914,12 +915,12 @@ scikit-learn = ">=0.22"
 scipy = ">=1.5"
 
 [package.extras]
-dev = ["matplotlib (>=3.0)", "kaleido", "plotly", "cython", "coverage", "flake8", "memory-profiler", "mkl", "numpydoc", "pillow", "sphinx", "sphinx-copybutton", "sphinx-gallery", "sphinxcontrib-bibtex", "sphinxext-opengraph", "codecov", "pytest (>=3.9)", "pytest-cov"]
-doc = ["cython", "coverage", "flake8", "kaleido", "memory-profiler", "mkl", "numpydoc", "pillow", "plotly", "sphinx", "sphinx-copybutton", "sphinx-gallery", "sphinxcontrib-bibtex", "sphinxext-opengraph"]
-min = ["joblib (==0.15)", "nibabel (==3.0.0)", "numpy (==1.18)", "pandas (==1.0)", "scikit-learn (==0.22)", "scipy (==1.5)"]
-plotly = ["kaleido", "plotly"]
+test = ["pytest-cov", "pytest (>=3.9)", "cython", "coverage", "codecov"]
 plotting = ["matplotlib (>=3.0)"]
-test = ["codecov", "coverage", "cython", "pytest (>=3.9)", "pytest-cov"]
+plotly = ["plotly", "kaleido"]
+min = ["scipy (==1.5)", "scikit-learn (==0.22)", "pandas (==1.0)", "numpy (==1.18)", "nibabel (==3.0.0)", "joblib (==0.15)"]
+doc = ["sphinxext-opengraph", "sphinxcontrib-bibtex", "sphinx-gallery", "sphinx-copybutton", "sphinx", "plotly", "pillow", "numpydoc", "mkl", "memory-profiler", "kaleido", "flake8", "coverage", "cython"]
+dev = ["pytest-cov", "pytest (>=3.9)", "codecov", "sphinxext-opengraph", "sphinxcontrib-bibtex", "sphinx-gallery", "sphinx-copybutton", "sphinx", "pillow", "numpydoc", "mkl", "memory-profiler", "flake8", "coverage", "cython", "plotly", "kaleido", "matplotlib (>=3.0)"]
 
 [[package]]
 name = "notebook-shim"
@@ -933,7 +934,7 @@ python-versions = ">=3.7"
 jupyter-server = ">=1.8,<2.0"
 
 [package.extras]
-test = ["pytest", "pytest-tornasync", "pytest-console-scripts"]
+test = ["pytest-console-scripts", "pytest-tornasync", "pytest"]
 
 [[package]]
 name = "numpy"
@@ -1034,8 +1035,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-dev = ["pre-commit", "tox"]
-testing = ["pytest", "pytest-benchmark"]
+testing = ["pytest-benchmark", "pytest"]
+dev = ["tox", "pre-commit"]
 
 [[package]]
 name = "pooch"
@@ -1051,9 +1052,9 @@ packaging = ">=20.0"
 requests = ">=2.19.0"
 
 [package.extras]
-progress = ["tqdm (>=4.41.0,<5.0.0)"]
-sftp = ["paramiko (>=2.7.0)"]
 xxhash = ["xxhash (>=1.4.3)"]
+sftp = ["paramiko (>=2.7.0)"]
+progress = ["tqdm (>=4.41.0,<5.0.0)"]
 
 [[package]]
 name = "prometheus-client"
@@ -1268,9 +1269,9 @@ python-versions = "*"
 qtpy = ">=1.9"
 
 [package.extras]
-develop = ["qtsass", "watchdog"]
-docs = ["sphinx", "sphinx-rtd-theme"]
-example = ["pyqt5", "pyside2"]
+example = ["pyside2", "pyqt5"]
+docs = ["sphinx-rtd-theme", "sphinx"]
+develop = ["watchdog", "qtsass"]
 
 [[package]]
 name = "qtpy"
@@ -1284,7 +1285,7 @@ python-versions = ">=3.7"
 packaging = "*"
 
 [package.extras]
-test = ["pytest (>=6,!=7.0.0,!=7.0.1)", "pytest-cov (>=3.0.0)", "pytest-qt"]
+test = ["pytest-qt", "pytest-cov (>=3.0.0)", "pytest (>=6,!=7.0.0,!=7.0.1)"]
 
 [[package]]
 name = "requests"
@@ -1319,10 +1320,10 @@ scipy = ">=1.3.2"
 threadpoolctl = ">=2.0.0"
 
 [package.extras]
-benchmark = ["matplotlib (>=3.1.2)", "pandas (>=1.0.5)", "memory-profiler (>=0.57.0)"]
-docs = ["matplotlib (>=3.1.2)", "scikit-image (>=0.14.5)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)", "memory-profiler (>=0.57.0)", "sphinx (>=4.0.1)", "sphinx-gallery (>=0.7.0)", "numpydoc (>=1.2.0)", "Pillow (>=7.1.2)", "sphinx-prompt (>=1.3.0)", "sphinxext-opengraph (>=0.4.2)"]
-examples = ["matplotlib (>=3.1.2)", "scikit-image (>=0.14.5)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)"]
-tests = ["matplotlib (>=3.1.2)", "scikit-image (>=0.14.5)", "pandas (>=1.0.5)", "pytest (>=5.0.1)", "pytest-cov (>=2.9.0)", "flake8 (>=3.8.2)", "black (>=22.3.0)", "mypy (>=0.770)", "pyamg (>=4.0.0)", "numpydoc (>=1.2.0)"]
+tests = ["numpydoc (>=1.2.0)", "pyamg (>=4.0.0)", "mypy (>=0.770)", "black (>=22.3.0)", "flake8 (>=3.8.2)", "pytest-cov (>=2.9.0)", "pytest (>=5.0.1)", "pandas (>=1.0.5)", "scikit-image (>=0.14.5)", "matplotlib (>=3.1.2)"]
+examples = ["seaborn (>=0.9.0)", "pandas (>=1.0.5)", "scikit-image (>=0.14.5)", "matplotlib (>=3.1.2)"]
+docs = ["sphinxext-opengraph (>=0.4.2)", "sphinx-prompt (>=1.3.0)", "Pillow (>=7.1.2)", "numpydoc (>=1.2.0)", "sphinx-gallery (>=0.7.0)", "sphinx (>=4.0.1)", "memory-profiler (>=0.57.0)", "seaborn (>=0.9.0)", "pandas (>=1.0.5)", "scikit-image (>=0.14.5)", "matplotlib (>=3.1.2)"]
+benchmark = ["memory-profiler (>=0.57.0)", "pandas (>=1.0.5)", "matplotlib (>=3.1.2)"]
 
 [[package]]
 name = "scipy"
@@ -1428,7 +1429,7 @@ executing = "*"
 pure-eval = "*"
 
 [package.extras]
-tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
+tests = ["cython", "littleutils", "pygments", "typeguard", "pytest"]
 
 [[package]]
 name = "terminado"
@@ -1466,8 +1467,8 @@ python-versions = ">=3.6"
 webencodings = ">=0.4"
 
 [package.extras]
-doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest", "pytest-cov", "pytest-flake8", "pytest-isort", "coverage"]
+test = ["coverage", "pytest-isort", "pytest-flake8", "pytest-cov", "pytest"]
+doc = ["sphinx-rtd-theme", "sphinx"]
 
 [[package]]
 name = "tomli"
@@ -1941,7 +1942,6 @@ lxml = [
     {file = "lxml-4.9.1-cp27-cp27m-win_amd64.whl", hash = "sha256:4cfbe42c686f33944e12f45a27d25a492cc0e43e1dc1da5d6a87cbcaf2e95627"},
     {file = "lxml-4.9.1-cp27-cp27mu-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:dad7b164905d3e534883281c050180afcf1e230c3d4a54e8038aa5cfcf312b84"},
     {file = "lxml-4.9.1-cp27-cp27mu-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:a614e4afed58c14254e67862456d212c4dcceebab2eaa44d627c2ca04bf86837"},
-    {file = "lxml-4.9.1-cp310-cp310-macosx_10_15_universal2.whl", hash = "sha256:49a866923e69bc7da45a0565636243707c22752fc38f6b9d5c8428a86121022c"},
     {file = "lxml-4.9.1-cp310-cp310-manylinux_2_12_i686.manylinux2010_i686.manylinux_2_24_i686.whl", hash = "sha256:f9ced82717c7ec65a67667bb05865ffe38af0e835cdd78728f1209c8fffe0cad"},
     {file = "lxml-4.9.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_24_aarch64.whl", hash = "sha256:d9fc0bf3ff86c17348dfc5d322f627d78273eba545db865c3cd14b3f19e57fa5"},
     {file = "lxml-4.9.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl", hash = "sha256:e5f66bdf0976ec667fc4594d2812a00b07ed14d1b44259d19a41ae3fff99f2b8"},
@@ -2114,8 +2114,8 @@ nbclient = [
     {file = "nbclient-0.6.6.tar.gz", hash = "sha256:0df76a7961d99a681b4796c74a1f2553b9f998851acc01896dce064ad19a9027"},
 ]
 nbconvert = [
-    {file = "nbconvert-6.5.0-py3-none-any.whl", hash = "sha256:c56dd0b8978a1811a5654f74c727ff16ca87dd5a43abd435a1c49b840fcd8360"},
-    {file = "nbconvert-6.5.0.tar.gz", hash = "sha256:223e46e27abe8596b8aed54301fadbba433b7ffea8196a68fd7b1ff509eee99d"},
+    {file = "nbconvert-6.5.1-py3-none-any.whl", hash = "sha256:0a3e224ee753ac4dceeb0257c4a315c069dcc6f9f4ae0ad15c5ea84713d15e28"},
+    {file = "nbconvert-6.5.1.tar.gz", hash = "sha256:2c01f3f518fee736c3d3f999dd20e0a16febba17a0d60a3b0fd28fbdec14115d"},
 ]
 nbformat = [
     {file = "nbformat-5.4.0-py3-none-any.whl", hash = "sha256:0d6072aaec95dddc39735c144ee8bbc6589c383fb462e4058abc855348152dad"},
